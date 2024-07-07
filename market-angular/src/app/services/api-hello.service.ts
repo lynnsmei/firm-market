@@ -1,19 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HelloMessage } from '../models/market.model';
+import { FirmsResponse } from '../models/market.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiHelloService {
-  private readonly _baseUrl: string = 'http://localhost:3000';
+  private readonly _baseUrl: string = 'http://localhost:3000/firms';
 
   constructor(
     private readonly http: HttpClient
   ) {}
 
-  public getHello(): Observable<HelloMessage> {
-    return this.http.get<HelloMessage>(this._baseUrl);
+  public getFirms(): Observable<FirmsResponse> {
+    return this.http.get<FirmsResponse>(this._baseUrl);
   }
 }

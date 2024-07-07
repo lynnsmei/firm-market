@@ -1,3 +1,12 @@
-<div>
-  <h1>{{ helloMessage }}</h1>
+<div class="container">
+  <h1>Firms List</h1>
+  <div *ngIf="firms.length === 0">
+    <p>No firms available.</p>
+  </div>
+  <div *ngIf="firms.length > 0" class="firms-list">
+    <div *ngFor="let firm of firms" class="firm-card">
+      <h2>{{ firm.name }}</h2>
+      <p><strong>Email:</strong> {{ firm.email }}</p>
+    </div>
+  </div>
 </div>

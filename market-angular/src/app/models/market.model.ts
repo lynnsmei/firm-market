@@ -1,3 +1,9 @@
-export interface HelloMessage {
-    message: string;
+export interface FirmsResponse {
+    firms: Firm[];
+}
+
+export interface Firm {
+    id: number,
+    email: string,
+    name: string
 }
